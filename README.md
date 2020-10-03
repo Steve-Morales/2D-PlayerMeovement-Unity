@@ -7,29 +7,48 @@ A beginner friendly script that can be attached and editted to any player game o
 ## The Code:
 
 `[SerializeField]` : 
+
 This just makes the variable to be seen in the Inspector/Editor within unity. 
 [More Information Here](https://docs.unity3d.com/ScriptReference/SerializeField.html)
+
 
 `Move()` :
 
 This function/method is what makes the 2D player/character move. 
+
 Using the rigidbody component of the game object, the velocity is changed based on user input.
+
 The input keys being used are the arrow keys: up, right, and left.
+
 At the end of the function, it flips the sprites of the gameobject using the `Flip()` function/method.
+
 
 `Flip()` :
 
 Flips all sprites of the gameobject depending on the boolean value of `facingRight`.
 The sprites are flipped on the **x-axis**.
 
+
 `OnCollisionEnter2D(Collision2D col)` :
 
 Within this function there is an if-statement that checks if the gameobject is colliding with another gameobject with the tag "ground"
+
 
 ## **Mandatory**
 
 You must have a **2D Rigidbody, Sprite Renderer, and Collision (Box or Polygon, etc.)**.
 
+
+To check if gameobject is touching the ground, you must create a tag and add it to all the gameobject that are the ground. This allows the gameobject to be able to jump again, when touching the ground.
+
+
 ## Optional
 
-If you want to check if gameobject is touching the ground, then you must create a tag and add it to all the gameobject that are the ground
+To make the game "feel good", it is recommeded to use the following setting settings for your 2D Rigidbody.
+
+
+-Linear Drag   : 1
+-Gravity Scale : 9.8
+
+
+-Contraints (tab) : Z = true (check the box, prevents rotation)
